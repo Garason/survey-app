@@ -11,11 +11,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Setup MySQL connection
+console.log('🔧 Building DB connection with:');
+
 const db = mysql.createConnection({
   host: '127.0.0.1',
   port: '3306', 
   user: 'root',
-  password: 'AIRplane101! ', // <= replace this
+  password: 'AIRplane101!', // <= replace this
   database: 'survey_app'
 });
 
