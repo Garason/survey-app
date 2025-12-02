@@ -13,7 +13,7 @@ app.use(cookieParser());
 // Setup MySQL connection
 const db = mysql.createConnection({
   host: '127.0.0.1',
-  port: 3306, 
+  port: '3306', 
   user: 'root',
   password: 'AIRplane101! ', // <= replace this
   database: 'survey_app'
