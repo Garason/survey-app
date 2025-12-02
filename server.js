@@ -1,3 +1,4 @@
+const cookieParser = require('cookie-parser');
 const express = require('express');
 const mysql = require('mysql2');
 
@@ -6,6 +7,8 @@ const PORT = 3000;
 
 // Parse form data
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cookieParser());
 
 // Setup MySQL connection
 const db = mysql.createConnection({
@@ -30,12 +33,17 @@ app.get('/', (req, res) => {
 
 // Survey submission route
 app.post('/submit-survey', (req, res) => {
+
+  // 🔒 Duplicate submission check
+  if (req.cookies.survey_submitted) {
+    return res.send("❌ You have already submitted this survey.");
+  }
+
   console.log('✅ Survey submission received:');
   console.log(req.body);
 
   const { codename, age, location, gender, interests, comments } = req.body;
 
-  // Convert interests array -> string
   const interestString = Array.isArray(interests)
     ? interests.join(', ')
     : interests;
@@ -62,9 +70,17 @@ app.post('/submit-survey', (req, res) => {
     }
 
     console.log('💾 Saved survey ID:', result.insertId);
+
+    // ✔ Set cookie to block future submissions
+    res.cookie('survey_submitted', 'true', {
+      maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
+      httpOnly: false
+    });
+
     res.send('Survey saved successfully! 🎉');
   });
 });
+
 
 // Start server
 app.listen(PORT, () => {
