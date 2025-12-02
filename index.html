@@ -18,74 +18,80 @@
       Check back soon — the prophecy depends on it.
     </p>
 
-    <form id="survey-form" method="Post" action="http://localhost:3000/submit-survey">
+    <form id="survey-form" method="POST" action="http://localhost:3000/submit-survey">
 
-      <!-- Handle -->
-      <label for="name" id="name-label">Codename (Handle):</label>
-      <input id="name" type="text" placeholder="e.g. Neo, Trinity, Switch…" required>
+  <!-- Handle -->
+  <label for="name" id="name-label">Codename (Handle):</label>
+  <input id="name" name="codename" type="text" placeholder="e.g. Neo, Trinity, Switch…" required>
 
-      <!-- Age -->
-      <label for="number" id="number-label">Age (in Earth years):</label>
-      <input id="number" type="number" min="1" max="120" placeholder="21">
+  <!-- Age -->
+  <label for="number" id="number-label">Age (in Earth years):</label>
+  <input id="number" name="age" type="number" min="1" max="120" placeholder="21">
 
-      <br>
+  <br>
 
-      <!-- Country -->
-      <label for="dropdown">Where do you currently operate from?</label>
-      <select id="dropdown">
-        <option value="zion">Zion</option>
-        <option value="matrix">Still Inside the Matrix</option>
-        <option value="neb">Aboard the Nebuchadnezzar</option>
-        <option value="other">Classified Location</option>
-      </select>
+  <!-- Country -->
+  <label for="dropdown">Where do you currently operate from?</label>
+  <select id="dropdown" name="location">
+    <option value="zion">Zion</option>
+    <option value="matrix">Still Inside the Matrix</option>
+    <option value="neb">Aboard the Nebuchadnezzar</option>
+    <option value="other">Classified Location</option>
+  </select>
 
-      <!-- Gender -->
-      <p>Chosen Form (Gender):</p>
+  <!-- Gender -->
+  <p>Chosen Form (Gender):</p>
 
-      <input id="male" type="radio" name="gender">
-      <label for="male">Male</label>
+  <input id="male" type="radio" name="gender" value="male">
+  <label for="male">Male</label>
 
-      <input id="female" type="radio" name="gender">
-      <label for="female">Female</label>
+  <input id="female" type="radio" name="gender" value="female">
+  <label for="female">Female</label>
 
-      <input id="nonbinary" type="radio" name="gender">
-      <label for="nonbinary">Non-Binary Program</label>
+  <input id="nonbinary" type="radio" name="gender" value="nonbinary">
+  <label for="nonbinary">Non-Binary Program</label>
 
-      <!-- Interests -->
-      <p>What skills are you training? (Select all that apply)</p>
+  <!-- Interests -->
+  <p>What skills are you training? (Select all that apply)</p>
 
-      <label>
-        <input type="checkbox" name="interests" value="kungfu">
-        I know kung fu
-      </label>
+  <label>
+    <input type="checkbox" name="interests" value="kungfu">
+    I know kung fu
+  </label>
 
-      <label>
-        <input type="checkbox" name="interests" value="piloting">
-        Helicopter Piloting Upload
-      </label>
+  <label>
+    <input type="checkbox" name="interests" value="piloting">
+    Helicopter Piloting Upload
+  </label>
 
-      <label>
-        <input type="checkbox" name="interests" value="bullet-dodge">
-        Bullet-Dodging Techniques
-      </label>
+  <label>
+    <input type="checkbox" name="interests" value="bullet-dodge">
+    Bullet-Dodging Techniques
+  </label>
 
-      <label>
-        <input type="checkbox" name="interests" value="cake">
-        Oracle’s Cookie Baking
-      </label>
+  <label>
+    <input type="checkbox" name="interests" value="cake">
+    Oracle’s Cookie Baking
+  </label>
 
-      <br><br>
+  <br><br>
 
-      <!-- Comments -->
-      <label for="textarea">Any messages for the Oracle?</label><br>
-      <textarea id="textarea" name="comments" rows="10" cols="50" placeholder="There is no spoon..."></textarea>
+  <!-- Comments -->
+  <label for="textarea">Any messages for the Oracle?</label><br>
+  <textarea id="textarea" name="comments" rows="10" cols="50" placeholder="There is no spoon..."></textarea>
 
-      <br><br>
+  <br><br>
 
-      <!-- Submit -->
-      <button id="submit" type="submit">Submit to the Matrix</button>
+  <!-- Submit -->
+  <button id="submit" type="submit">Submit to the Matrix</button>
 
-    </form>
+</form>
+
+
+
+
+
+
 
   </body>
 </html>
