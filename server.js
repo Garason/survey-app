@@ -14,7 +14,7 @@ app.use(cookieParser());
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'YOUR_PASSWORD_HERE', // <= replace this
+  password: 'AIRplane101! ', // <= replace this
   database: 'survey_app'
 });
 
