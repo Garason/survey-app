@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+
+    <h1 id="title">The Matrix Compatibility Survey</h1>
+
+    <p id="description">
+      Thank you for taking a moment to interact with my survey.  
+      This is just a fun project to help me practice connecting front-end and back-end 
+      code — no actual data is collected by Agents.  
+      <br><br>
+      As I learn more, I hope to add animations, effects, and maybe even a digital spoon. 
+      Check back soon — the prophecy depends on it.
+    </p>
+
+    <form id="survey-form">
+
+      <!-- Handle -->
+      <label for="name" id="name-label">Codename (Handle):</label>
+      <input id="name" type="text" placeholder="e.g. Neo, Trinity, Switch…" required>
+
+      <!-- Age -->
+      <label for="number" id="number-label">Age (in Earth years):</label>
+      <input id="number" type="number" min="1" max="120" placeholder="21">
+
+      <br>
+
+      <!-- Country -->
+      <label for="dropdown">Where do you currently operate from?</label>
+      <select id="dropdown">
+        <option value="zion">Zion</option>
+        <option value="matrix">Still Inside the Matrix</option>
+        <option value="neb">Aboard the Nebuchadnezzar</option>
+        <option value="other">Classified Location</option>
+      </select>
+
+      <!-- Gender -->
+      <p>Chosen Form (Gender):</p>
+
+      <input id="male" type="radio" name="gender">
+      <label for="male">Male</label>
+
+      <input id="female" type="radio" name="gender">
+      <label for="female">Female</label>
+
+      <input id="nonbinary" type="radio" name="gender">
+      <label for="nonbinary">Non-Binary Program</label>
+
+      <!-- Interests -->
+      <p>What skills are you training? (Select all that apply)</p>
+
+      <label>
+        <input type="checkbox" name="interests" value="kungfu">
+        I know kung fu
+      </label>
+
+      <label>
+        <input type="checkbox" name="interests" value="piloting">
+        Helicopter Piloting Upload
+      </label>
+
+      <label>
+        <input type="checkbox" name="interests" value="bullet-dodge">
+        Bullet-Dodging Techniques
+      </label>
+
+      <label>
+        <input type="checkbox" name="interests" value="cake">
+        Oracle’s Cookie Baking
+      </label>
+
+      <br><br>
+
+      <!-- Comments -->
+      <label for="textarea">Any messages for the Oracle?</label><br>
+      <textarea id="textarea" name="comments" rows="10" cols="50" placeholder="There is no spoon..."></textarea>
+
+      <br><br>
+
+      <!-- Submit -->
+      <button id="submit" type="submit">Submit to the Matrix</button>
+
+    </form>
+
+  </body>
+</html>
