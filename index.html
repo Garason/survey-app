@@ -1,97 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Survey Form</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
+  <title>Business Operations Assessment</title>
 
-    <h1 id="title">The Matrix Compatibility Survey</h1>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <p id="description">
-      Thank you for taking a moment to interact with my survey.  
-      This is just a fun project to help me practice connecting front-end and back-end 
-      code — no actual data is collected by Agents.  
-      <br><br>
-      As I learn more, I hope to add animations, effects, and maybe even a digital spoon. 
-      Check back soon — the prophecy depends on it.
-    </p>
-<h1> debug version 2</h1>
-    <form id="survey-form" method="POST" action="http://localhost:3000/submit-survey">
+<body>
 
-  <!-- Handle -->
-  <label for="name" id="name-label">Codename (Handle):</label>
-  <input id="name" name="codename" type="text" placeholder="e.g. Neo, Trinity, Switch…" required>
+  <main class="page-wrapper">
 
-  <!-- Age -->
-  <label for="number" id="number-label">Age (in Earth years):</label>
-  <input id="number" name="age" type="number" min="1" max="120" placeholder="21">
+    <section class="survey-card">
 
-  <br>
+      <div class="survey-header">
+        <p class="eyebrow">Business & Data Analysis Project</p>
 
-  <!-- Country -->
-  <label for="dropdown">Where do you currently operate from?</label>
-  <select id="dropdown" name="location">
-    <option value="zion">Zion</option>
-    <option value="matrix">Still Inside the Matrix</option>
-    <option value="neb">Aboard the Nebuchadnezzar</option>
-    <option value="other">Classified Location</option>
-  </select>
+        <h1 id="title">Business Operations Assessment</h1>
 
-  <!-- Gender -->
-  <p>Chosen Form (Gender):</p>
+        <p id="description">
+          This survey-style web form demonstrates front-end form design for collecting
+          business requirements, operational data, and process improvement feedback.
+          The project supports my portfolio focus in business analysis, data analysis,
+          and application development.
+        </p>
+      </div>
 
-  <input id="male" type="radio" name="gender" value="male">
-  <label for="male">Male</label>
+      <form id="survey-form" method="POST" action="http://localhost:3000/submit-survey">
 
-  <input id="female" type="radio" name="gender" value="female">
-  <label for="female">Female</label>
+        <label for="name" id="name-label">Name or Department</label>
+        <input id="name" name="name" type="text" placeholder="e.g. Operations, Fleet, Customer Service" required>
 
-  <input id="nonbinary" type="radio" name="gender" value="nonbinary">
-  <label for="nonbinary">Non-Binary Program</label>
+        <label for="email" id="email-label">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
 
-  <!-- Interests -->
-  <p>What skills are you training? (Select all that apply)</p>
+        <label for="number" id="number-label">Years of Operational Experience</label>
+        <input id="number" name="experience" type="number" min="0" max="50" placeholder="5">
 
-  <label>
-    <input type="checkbox" name="interests" value="kungfu">
-    I know kung fu
-  </label>
+        <label for="dropdown">Primary Business Area</label>
+        <select id="dropdown" name="business_area">
+          <option value="">Select an area</option>
+          <option value="operations">Operations Management</option>
+          <option value="customer-service">Customer Service</option>
+          <option value="fleet">Fleet or Equipment Management</option>
+          <option value="scheduling">Scheduling and Workforce Planning</option>
+          <option value="reporting">Reporting and Analytics</option>
+        </select>
 
-  <label>
-    <input type="checkbox" name="interests" value="piloting">
-    Helicopter Piloting Upload
-  </label>
+        <div class="form-group">
+          <p>Current Process Maturity</p>
 
-  <label>
-    <input type="checkbox" name="interests" value="bullet-dodge">
-    Bullet-Dodging Techniques
-  </label>
+          <label class="option">
+            <input type="radio" name="process_maturity" value="manual">
+            Mostly manual processes
+          </label>
 
-  <label>
-    <input type="checkbox" name="interests" value="cake">
-    Oracle’s Cookie Baking
-  </label>
+          <label class="option">
+            <input type="radio" name="process_maturity" value="mixed">
+            Mix of manual and digital tools
+          </label>
 
-  <br><br>
+          <label class="option">
+            <input type="radio" name="process_maturity" value="automated">
+            Mostly digital or automated processes
+          </label>
+        </div>
 
-  <!-- Comments -->
-  <label for="textarea">Any messages for the Oracle?</label><br>
-  <textarea id="textarea" name="comments" rows="10" cols="50" placeholder="There is no spoon..."></textarea>
+        <div class="form-group">
+          <p>What business improvements are needed? Select all that apply.</p>
 
-  <br><br>
+          <label class="option">
+            <input type="checkbox" name="improvements" value="dashboards">
+            KPI dashboards and reporting
+          </label>
 
-  <!-- Submit -->
-  <button id="submit" type="submit">Submit to the Matrix</button>
+          <label class="option">
+            <input type="checkbox" name="improvements" value="workflow">
+            Workflow and process improvement
+          </label>
 
-</form>
+          <label class="option">
+            <input type="checkbox" name="improvements" value="data-quality">
+            Better data accuracy and tracking
+          </label>
 
+          <label class="option">
+            <input type="checkbox" name="improvements" value="scheduling">
+            Improved scheduling and resource planning
+          </label>
+        </div>
 
+        <label for="textarea">Additional Business Requirements or Feedback</label>
+        <textarea id="textarea" name="comments" rows="7" placeholder="Describe the current problem, reporting need, or process improvement opportunity..."></textarea>
 
+        <button id="submit" type="submit">Submit Assessment</button>
 
+      </form>
 
+    </section>
 
+  </main>
 
-  </body>
+</body>
 </html>
